@@ -1,98 +1,154 @@
-import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
+import { DropdownOption, SearchableDropdown } from "@/components/SearchableDropdown/SearchableDropdown";
+import { ThemedText } from "@/components/themed-text";
+import { ThemedView } from "@/components/themed-view";
+import { TreeVisualization } from "@/components/TreeVisualization/TreeVisualization";
+import { treeData } from "@/data/treeData";
+import React, { useState } from "react";
+import { StyleSheet, View } from "react-native";
 
-import { HelloWave } from '@/components/hello-wave';
-import ParallaxScrollView from '@/components/parallax-scroll-view';
-import { ThemedText } from '@/components/themed-text';
-import { ThemedView } from '@/components/themed-view';
-import { Link } from 'expo-router';
+// Tree options similar to the image style
+const treeOptions: DropdownOption[] = [
+  {
+    id: '1',
+    label: 'Apple Tree',
+    value: 'apple',
+    // emoji: '🍎',
+    iconPosition: 'after'
+  },
+  {
+    id: '2',
+    label: 'Oak Tree',
+    value: 'oak',
+    // emoji: '🌳',
+    iconPosition: 'after'
+  },
+  {
+    id: '3',
+    label: 'Pine Tree',
+    value: 'pine',
+    // emoji: '🌲',
+    iconPosition: 'after'
+  },
+  {
+    id: '4',
+    label: 'Maple Tree',
+    value: 'maple',
+    // emoji: '🍁',
+    iconPosition: 'after'
+  },
+  {
+    id: '5',
+    label: 'Cherry Tree',
+    value: 'cherry',
+    // emoji: '🌸',
+    iconPosition: 'after'
+  },
+  {
+    id: '6',
+    label: 'Palm Tree',
+    value: 'palm',
+    // emoji: '🌴',
+    iconPosition: 'after'
+  }
+];
 
 export default function HomeScreen() {
-  return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12',
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <Link href="/modal">
-          <Link.Trigger>
-            <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-          </Link.Trigger>
-          <Link.Preview />
-          <Link.Menu>
-            <Link.MenuAction title="Action" icon="cube" onPress={() => alert('Action pressed')} />
-            <Link.MenuAction
-              title="Share"
-              icon="square.and.arrow.up"
-              onPress={() => alert('Share pressed')}
-            />
-            <Link.Menu title="More" icon="ellipsis">
-              <Link.MenuAction
-                title="Delete"
-                icon="trash"
-                destructive
-                onPress={() => alert('Delete pressed')}
-              />
-            </Link.Menu>
-          </Link.Menu>
-        </Link>
+  const [selectedTree, setSelectedTree] = useState('apple');
+  
+  // Get the selected tree data
+  const currentTreeData = treeData.find(tree => tree.value === selectedTree) || treeData[0];
 
-        <ThemedText>
-          {`Tap the Explore tab to learn more about what's included in this starter app.`}
+  return (
+    <ThemedView style={styles.container}>
+      <ThemedView style={styles.sectionContainer}>
+        <ThemedText style={styles.title}>
+          Select the tree you want to visualize
         </ThemedText>
       </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          {`When you're ready, run `}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+      
+      <SearchableDropdown
+        options={treeOptions}
+        selectedValues={selectedTree}
+        onSelectionChange={setSelectedTree}
+        placeholder="Select a tree"
+        searchPlaceholder="Search for a tree..."
+        multiSelect={false}
+        showSearch={true}
+        style={styles.dropdown}
+      />
+
+      <View style={styles.treeContainer}>
+        <TreeVisualization 
+          treeData={currentTreeData}
+          use3D={true}
+        />
+      </View>
+    </ThemedView>
   );
 }
 
 const styles = StyleSheet.create({
-  titleContainer: {
+  container: {
+    flex: 1,
+    backgroundColor: 'white',
+    paddingHorizontal: 15,
+    paddingVertical: 15,
+  },
+  sectionContainer: {
+    marginBottom: 20,
+  },
+  title: {
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+  dropdown: {
+    marginBottom: 20,
+  },
+  treeContainer: {
+    flex: 1,
+    marginTop: 25,
+  },
+  buttonSection: {
+    marginTop: 30,
+    padding: 15,
+    backgroundColor: '#f8f9fa',
+    borderRadius: 10,
+  },
+  sectionTitle: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginBottom: 15,
+    textAlign: 'center',
+  },
+  buttonRow: {
     flexDirection: 'row',
-    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: 15,
     gap: 8,
   },
-  stepContainer: {
-    gap: 8,
+  button: {
+    flex: 1,
+    marginHorizontal: 2,
+  },
+  infoContainer: {
+    marginTop: 20,
+    padding: 15,
+    backgroundColor: '#f5f5f5',
+    borderRadius: 10,
+  },
+  infoText: {
+    fontSize: 16,
+    fontWeight: '600',
+    marginBottom: 10,
+  },
+  descriptionText: {
+    fontSize: 14,
+    fontWeight: '600',
     marginBottom: 8,
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
+  featureText: {
+    fontSize: 14,
+    marginBottom: 4,
+    marginLeft: 10,
   },
 });

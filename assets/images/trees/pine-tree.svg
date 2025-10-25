@@ -1,0 +1,25 @@
+<svg width="300" height="400" viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="300" height="400" fill="#98FB98"/>
+  
+  <!-- Ground -->
+  <rect x="0" y="350" width="300" height="50" fill="#8B4513"/>
+  
+  <!-- Tree trunk -->
+  <rect x="140" y="250" width="20" height="100" fill="#604030"/>
+  
+  <!-- Pine needles (triangular layers) -->
+  <polygon points="150,100 100,200 200,200" fill="#2f6c1a"/>
+  <polygon points="150,130 110,220 190,220" fill="#2f6c1a"/>
+  <polygon points="150,160 120,240 180,240" fill="#2f6c1a"/>
+  
+  <!-- Pine cones -->
+  <ellipse cx="120" cy="180" rx="8" ry="15" fill="#a56f35"/>
+  <ellipse cx="180" cy="190" rx="8" ry="15" fill="#a56f35"/>
+  <ellipse cx="150" cy="170" rx="8" ry="15" fill="#a56f35"/>
+  
+  <!-- Needle details -->
+  <line x1="130" y1="200" x2="140" y2="190" stroke="#1a4d0f" stroke-width="1"/>
+  <line x1="160" y1="200" x2="170" y2="190" stroke="#1a4d0f" stroke-width="1"/>
+  <line x1="145" y1="220" x2="155" y2="210" stroke="#1a4d0f" stroke-width="1"/>
+</svg>

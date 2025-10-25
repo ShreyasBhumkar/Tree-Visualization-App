@@ -7,9 +7,13 @@
     "icon": "./assets/images/icon.png",
     "scheme": "treevisualizationapp",
     "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.shreyas111.treevisualizationapp",
+      "buildNumber": "1.0.0",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -19,7 +23,8 @@
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.shreyas_111.treevisualizationapp"
     },
     "web": {
       "output": "static",
@@ -31,7 +36,7 @@
         "expo-splash-screen",
         {
           "image": "./assets/images/splash-icon.png",
-          "imageWidth": 200,
+          "imageWidth": "200",
           "resizeMode": "contain",
           "backgroundColor": "#ffffff",
           "dark": {
@@ -41,8 +46,13 @@
       ]
     ],
     "experiments": {
-      "typedRoutes": true,
-      "reactCompiler": true
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "54532207-7936-4740-a5f6-59a536edb398"
+      }
     }
   }
 }
