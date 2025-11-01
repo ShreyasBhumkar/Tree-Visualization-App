@@ -60,7 +60,7 @@ const treeOptions: DropdownOption[] = [
 ];
 
 export default function HomeScreen() {
-  const [selectedTree, setSelectedTree] = useState('apple');
+  const [selectedTree, setSelectedTree] = useState('argemone_mexicana');
   
   // Get the selected tree data
   const currentTreeData = treeData.find(tree => tree.value === selectedTree) || treeData[0];
