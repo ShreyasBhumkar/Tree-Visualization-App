@@ -6,7 +6,7 @@ export const treeData: TreeModel[] = [
     name: "Argemone Mexicana",
     value: "argemone_mexicana",
     description: "Argemone mexicana, also known as the Mexican poppy or काटेरी धोतरा in Marathi, is a prickly wild herb that grows in dry and wasteland areas. It is known for its bright yellow flowers, spiny leaves, and toxic black seeds.",
-    imagePath: require("../assets/images/trees/argemone-maxicana.jpg"),
+    imagePath: require("../assets/images/trees/argemone-maxicana.png"),
     imageWidth: 400,
     imageHeight: 500,
     cameraPosition: [0, 2, 5],
@@ -24,10 +24,10 @@ export const treeData: TreeModel[] = [
         funFact: "The yellow sap (latex) found in the flower and stem is toxic but used in traditional medicine in controlled amounts.",
         uses: "Used in Ayurvedic medicine for skin disorders and jaundice (with great caution).",
         clickArea: {
-          x: 130,
-          y: 160,
-          width: 140,
-          height: 90
+          x: 125,
+          y: 130,
+          width: 70,
+          height: 50
         },
         position: [0, 2.2, 0],
         scale: [0.25, 0.25, 0.25],
@@ -43,10 +43,10 @@ export const treeData: TreeModel[] = [
         funFact: "The plant's thorny leaves help protect it from grazing animals.",
         uses: "Crushed leaves are sometimes used externally for treating skin infections in traditional medicine.",
         clickArea: {
-          x: 40,
-          y: 240,
-          width: 320,
-          height: 140
+          x: 120,
+          y: 205,
+          width: 200,
+          height: 105
         },
         position: [0, 1.8, 0],
         scale: [0.5, 0.2, 0.1],
@@ -62,10 +62,10 @@ export const treeData: TreeModel[] = [
         funFact: "The plant's yellow sap can stain hands and clothes permanently.",
         uses: "Used in small quantities in traditional remedies for warts and eczema.",
         clickArea: {
-          x: 175,
-          y: 240,
+          x: 190,
+          y: 270,
           width: 50,
-          height: 120
+          height: 40
         },
         position: [0, 1, 0],
         scale: [0.1, 1, 0.1],
@@ -81,9 +81,9 @@ export const treeData: TreeModel[] = [
         funFact: "Each pod can contain dozens of tiny round seeds that look like mustard seeds.",
         uses: "The seeds are toxic and should never be consumed; they can cause epidemic dropsy.",
         clickArea: {
-          x: 180,
-          y: 190,
-          width: 40,
+          x: 185,
+          y: 155,
+          width: 85,
           height: 50
         },
         position: [0, 2.4, 0],
@@ -100,10 +100,10 @@ export const treeData: TreeModel[] = [
         funFact: "These seeds are often mistaken for mustard seeds and have caused accidental poisoning in humans.",
         uses: "Not used for consumption; handled with care in botanical and pharmacological studies.",
         clickArea: {
-          x: 185,
-          y: 230,
-          width: 40,
-          height: 40
+          x: 153,
+          y: 150,
+          width: 24,
+          height: 30
         },
         position: [0, 2.5, 0],
         scale: [0.2, 0.2, 0.2],
@@ -119,16 +119,16 @@ export const treeData: TreeModel[] = [
         funFact: "Even during drought, the plant stays alive due to its strong root system.",
         uses: "Roots are used in traditional healing for toothaches and respiratory problems (in controlled quantities).",
         clickArea: {
-          x: 170,
-          y: 360,
-          width: 60,
-          height: 60
+          x: 140,
+          y: 310,
+          width: 150,
+          height: 85
         },
         position: [0, -0.5, 0],
         scale: [0.1, 0.5, 0.1],
         rotation: [0, 0, 0],
-        geometry: "cylinder",
-        size: [0.3, 1, 0.3]
+        geometry: "box",
+        size: [1, 0.5, 1]
       }
     ]
   },  
