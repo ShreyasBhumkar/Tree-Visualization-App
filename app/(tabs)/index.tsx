@@ -10,41 +10,48 @@ import { StyleSheet, View } from "react-native";
 const treeOptions: DropdownOption[] = [
   {
     id: '1',
+    label: 'Argemone Mexicana',
+    value: 'argemone_mexicana',
+    // emoji: '🍎',
+    iconPosition: 'after'
+  },
+  {
+    id: '2',
     label: 'Apple Tree',
     value: 'apple',
     // emoji: '🍎',
     iconPosition: 'after'
   },
   {
-    id: '2',
+    id: '3',
     label: 'Oak Tree',
     value: 'oak',
     // emoji: '🌳',
     iconPosition: 'after'
   },
   {
-    id: '3',
+    id: '4',
     label: 'Pine Tree',
     value: 'pine',
     // emoji: '🌲',
     iconPosition: 'after'
   },
   {
-    id: '4',
+    id: '5',
     label: 'Maple Tree',
     value: 'maple',
     // emoji: '🍁',
     iconPosition: 'after'
   },
   {
-    id: '5',
+    id: '6',
     label: 'Cherry Tree',
     value: 'cherry',
     // emoji: '🌸',
     iconPosition: 'after'
   },
   {
-    id: '6',
+    id: '7',
     label: 'Palm Tree',
     value: 'palm',
     // emoji: '🌴',
