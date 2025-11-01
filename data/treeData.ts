@@ -3,6 +3,137 @@ import { TreeModel } from '../types/tree';
 export const treeData: TreeModel[] = [
   {
     id: "1",
+    name: "Argemone Mexicana",
+    value: "argemone_mexicana",
+    description: "Argemone mexicana, also known as the Mexican poppy or काटेरी धोतरा in Marathi, is a prickly wild herb that grows in dry and wasteland areas. It is known for its bright yellow flowers, spiny leaves, and toxic black seeds.",
+    imagePath: require("../assets/images/trees/argemone-maxicana.jpg"),
+    imageWidth: 400,
+    imageHeight: 500,
+    cameraPosition: [0, 2, 5],
+    lighting: {
+      ambient: 0.5,
+      directional: 0.9
+    },
+    backgroundColor: "#f2d96b",
+    parts: [
+      {
+        id: "flower",
+        name: "Flower",
+        highlightColor: "#f8e71c",
+        description: "The Argemone mexicana flower is bright yellow with six delicate petals. It blooms at the tip of spiny stems and attracts pollinators like bees.",
+        funFact: "The yellow sap (latex) found in the flower and stem is toxic but used in traditional medicine in controlled amounts.",
+        uses: "Used in Ayurvedic medicine for skin disorders and jaundice (with great caution).",
+        clickArea: {
+          x: 130,
+          y: 160,
+          width: 140,
+          height: 90
+        },
+        position: [0, 2.2, 0],
+        scale: [0.25, 0.25, 0.25],
+        rotation: [0, 0, 0],
+        geometry: "sphere",
+        size: [0.6, 0.6, 0.6]
+      },
+      {
+        id: "leaf",
+        name: "Leaf",
+        highlightColor: "#6bbf59",
+        description: "The leaves are bluish-green, lobed, and covered with sharp spines. They contain a white vein-like pattern throughout.",
+        funFact: "The plant's thorny leaves help protect it from grazing animals.",
+        uses: "Crushed leaves are sometimes used externally for treating skin infections in traditional medicine.",
+        clickArea: {
+          x: 40,
+          y: 240,
+          width: 320,
+          height: 140
+        },
+        position: [0, 1.8, 0],
+        scale: [0.5, 0.2, 0.1],
+        rotation: [0, 0, 0],
+        geometry: "box",
+        size: [2, 1, 0.2]
+      },
+      {
+        id: "stem",
+        name: "Stem",
+        highlightColor: "#a1c349",
+        description: "The stem is upright, greenish-blue, and full of thorns. It contains a yellow latex that oozes when cut.",
+        funFact: "The plant's yellow sap can stain hands and clothes permanently.",
+        uses: "Used in small quantities in traditional remedies for warts and eczema.",
+        clickArea: {
+          x: 175,
+          y: 240,
+          width: 50,
+          height: 120
+        },
+        position: [0, 1, 0],
+        scale: [0.1, 1, 0.1],
+        rotation: [0, 0, 0],
+        geometry: "cylinder",
+        size: [0.5, 2, 0.5]
+      },
+      {
+        id: "fruit",
+        name: "Fruit Pod",
+        highlightColor: "#bfa76b",
+        description: "The fruit of Argemone mexicana is a spiny, oval capsule that splits open when mature, revealing small black seeds inside.",
+        funFact: "Each pod can contain dozens of tiny round seeds that look like mustard seeds.",
+        uses: "The seeds are toxic and should never be consumed; they can cause epidemic dropsy.",
+        clickArea: {
+          x: 180,
+          y: 190,
+          width: 40,
+          height: 50
+        },
+        position: [0, 2.4, 0],
+        scale: [0.3, 0.3, 0.3],
+        rotation: [0, 0, 0],
+        geometry: "sphere",
+        size: [0.7, 0.7, 0.7]
+      },
+      {
+        id: "seed",
+        name: "Seeds",
+        highlightColor: "#4b3621",
+        description: "The seeds are small, black, and round, resembling mustard seeds. They are extremely toxic due to the presence of sanguinarine and dihydrosanguinarine alkaloids.",
+        funFact: "These seeds are often mistaken for mustard seeds and have caused accidental poisoning in humans.",
+        uses: "Not used for consumption; handled with care in botanical and pharmacological studies.",
+        clickArea: {
+          x: 185,
+          y: 230,
+          width: 40,
+          height: 40
+        },
+        position: [0, 2.5, 0],
+        scale: [0.2, 0.2, 0.2],
+        rotation: [0, 0, 0],
+        geometry: "sphere",
+        size: [0.3, 0.3, 0.3]
+      },
+      {
+        id: "root",
+        name: "Root",
+        highlightColor: "#5b3a29",
+        description: "The root system anchors the plant deeply into the dry soil, helping it survive in harsh, arid conditions.",
+        funFact: "Even during drought, the plant stays alive due to its strong root system.",
+        uses: "Roots are used in traditional healing for toothaches and respiratory problems (in controlled quantities).",
+        clickArea: {
+          x: 170,
+          y: 360,
+          width: 60,
+          height: 60
+        },
+        position: [0, -0.5, 0],
+        scale: [0.1, 0.5, 0.1],
+        rotation: [0, 0, 0],
+        geometry: "cylinder",
+        size: [0.3, 1, 0.3]
+      }
+    ]
+  },  
+  {
+    id: "2",
     name: "Apple Tree",
     value: "apple",
     description: "Apple trees are deciduous trees known for their sweet and edible fruits. They belong to the Rosaceae family and are cultivated worldwide.",
@@ -114,7 +245,7 @@ export const treeData: TreeModel[] = [
     ]
   },
   {
-    id: "2",
+    id: "3",
     name: "Oak Tree",
     value: "oak",
     description: "The oak tree is a symbol of strength and endurance. It produces acorns and has lobed leaves.",
@@ -207,7 +338,7 @@ export const treeData: TreeModel[] = [
     ]
   },
   {
-    id: "3",
+    id: "4",
     name: "Pine Tree",
     value: "pine",
     description: "Pine trees are evergreen conifers with needle-like leaves and woody cones.",
@@ -281,7 +412,7 @@ export const treeData: TreeModel[] = [
     ]
   },
   {
-    id: "4",
+    id: "5",
     name: "Maple Tree",
     value: "maple",
     description: "Maple trees are known for their distinctive leaves and the sweet sap used to make maple syrup.",
@@ -355,7 +486,7 @@ export const treeData: TreeModel[] = [
     ]
   },
   {
-    id: "5",
+    id: "6",
     name: "Cherry Tree",
     value: "cherry",
     description: "Cherry trees are famous for their beautiful pink or white blossoms and delicious red fruits.",
@@ -448,7 +579,7 @@ export const treeData: TreeModel[] = [
     ]
   },
   {
-    id: "6",
+    id: "7",
     name: "Palm Tree",
     value: "palm",
     description: "Palm trees are tropical plants known for their tall trunks and fan-like or feather-like leaves.",
